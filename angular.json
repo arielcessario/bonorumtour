@@ -19,14 +19,28 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
             "preserveSymlinks": true,
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss",
+              "src/assets/css/easy-responsive-tabs.css",
+              "src/assets/css/flexslider.css",
+              "src/assets/css/lightbox.css",
+              "src/assets/css/style.css",
+              "src/assets/css/font-awesome.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.css",
+              "./node_modules/font-awesome/scss/font-awesome.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/jquery-2.1.4.min.js",
+              "src/assets/js/jquery.countup.js",
+              "src/assets/js/jquery.flexslider.js",
+              "src/assets/js/jquery.flexisel.js",
+              "src/assets/js/jquery.waypoints.min.js",
+              "src/assets/js/easing.js",
+              "src/assets/js/easy-responsive-tabs.js",
+              "src/assets/js/responsiveslides.min.js",
+              "src/assets/js/move-top.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -74,25 +88,29 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.css"
+              "src/styles.scss",
+              "src/assets/css/easy-responsive-tabs.css",
+              "src/assets/css/flexslider.css",
+              "src/assets/css/lightbox.css",
+              "src/assets/css/style.css",
+              "src/assets/css/font-awesome.css",
+              "../node_modules/bootstrap/dist/css/bootstrap.css",
+              "../node_modules/font-awesome/scss/font-awesome.scss"
             ],
-            "scripts": [],
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ]
+            "scripts": [
+              "src/assets/js/easing.js",
+              "src/assets/js/easy-responsive-tabs.js",
+              "src/assets/js/responsiveslides.min.js.js",
+              "src/assets/js/move-top.js"
+            ],
+            "assets": ["src/favicon.ico", "src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "src/tsconfig.app.json",
-              "src/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["src/tsconfig.app.json", "src/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -112,9 +130,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
