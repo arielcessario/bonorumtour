@@ -1,0 +1,73 @@
+<!-- banner -->
+<div class="banner inner-bg-w3" id="home">
+
+</div>
+
+<div class="container cotizador" style="margin-bottom: 2em;">
+
+  <h2 class="tittle-w3">DMC</h2>
+  <div heading="Destinations" class="">
+
+    <form action="#" method="post">
+      <div class="w3layouts_newsletter_right row cotizador-row">
+        <div class="n-left col-sm-3">
+          <h6>Destinations</h6>
+        </div>
+        <div class="col-sm-9" dropdown>
+          <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle" aria-controls="dropdown-basic">
+            {{selected_dest}}
+            <span class="caret"></span>
+          </button>
+          <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+            <li role="menuitem" *ngFor="let d of destinations" (click)="selected_dest = d.name; selected_dest_id = d.destination_id; filterServicesByDestination(d.destination_id);">
+              <a class="dropdown-item">{{d.name}}</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+      <div class="w3layouts_newsletter_right row cotizador-row">
+        <div class="n-left col-sm-3">
+          <h6>Services</h6>
+        </div>
+        <div class="col-sm-9" dropdown>
+          <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle" aria-controls="dropdown-basic">
+            {{selected_serv}}
+            <span class="caret"></span>
+          </button>
+          <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+            <li role="menuitem" *ngFor="let s of services_filtered" (click)="selected_serv = s.description; selected_serv_id = s.service_id; filterPricesByService(s.service_id);">
+              <a class="dropdown-item">{{s.description}}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="w3layouts_newsletter_right row cotizador-row">
+        <div class="n-left col-sm-3">
+          <h6>Pax</h6>
+        </div>
+        <div class="col-sm-9" dropdown>
+          <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle" aria-controls="dropdown-basic">
+            {{selected_pric}}
+            <span class="caret"></span>
+          </button>
+          <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+            <li role="menuitem" *ngFor="let p of pricespax_filtered" (click)="selected_pric = p.pax_from + ' - ' + p.pax_to; selected_pric_id = p.pricespax_id; price = p.price">
+              <a class="dropdown-item">{{p.pax_from + ' - ' + p.pax_to}}</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
+
+    </form>
+    <div class="w3layouts_newsletter_right cotizador-submit d-flex flex-row-reverse">
+      <input type="submit" value="Send to Email">
+      <div class="n-left">
+        <h6>{{ price | currency}}</h6>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div>

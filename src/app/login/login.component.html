@@ -1,0 +1,28 @@
+<!-- banner -->
+<div class="banner inner-bg-w3" id="home">
+
+</div>
+<!-- //banner -->
+<!-- Contact -->
+<div class="contact-page">
+  <div class="container">
+    <h2 class="tittle-w3">Login</h2>
+    <div class="form-bg">
+      <form>
+        <div class="row">
+          <div class="col-md-6 contact-fields">
+            <input type="email" name="Email" [(ngModel)]="email" placeholder="Email" required="">
+          </div>
+          <div class="col-md-6 contact-fields">
+            <input type="password" name="Password" [(ngModel)]="password" placeholder="Password" required="">
+          </div>
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="err">
+          <strong>Error!</strong> {{err}}
+        </div>
+        <input type="submit" (click)="login()" value="Login">
+      </form>
+    </div>
+  </div>
+</div>
+<!--// Contact -->

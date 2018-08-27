@@ -1,0 +1,93 @@
+<div class="banner-top" id="banner-top">
+  <div class="social-bnr-agileits">
+    <ul>
+      <li>
+        <a href="#">
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa fa-twitter" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa fa-google-plus" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa fa-linkedin" aria-hidden="true"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="contact-bnr-w3-agile">
+    <ul>
+
+      <li>
+        <i class="fa fa-envelope" aria-hidden="true"></i>
+        <a href="mailto:info@example.com">INFO@EXAMPLE.COM</a>
+      </li>
+      <li>
+        <i class="fa fa-phone" aria-hidden="true"></i>+1 (100)222-23-33</li>
+      <li *ngIf="logged">
+        <i class="fa fa-sign-out fa-3x" style="margin-right: 0;" aria-hidden="true" (click)="logout()"></i>
+      </li>
+    </ul>
+  </div>
+  <div class="clearfix"></div>
+</div>
+<header>
+  <div class="container">
+
+    <!-- navigation -->
+    <div class="w3_navigation">
+      <nav class="navbar  navbar-expand-md navbar-default">
+        <!-- <div class="container-fluid">
+            <div class="navbar-header navbar-right"> -->
+        <div class="w3_navigation_pos navbar-brand">
+          <img src="assets/images/logo-bonorum-white.png" height="80" alt="">
+        </div>
+        <button type="button" class="navbar-toggler collapsed" (click)="isCollapsed = !isCollapsed" data-target="#bs-example-navbar-collapse-1"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- </div> -->
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-right" [collapse]="isCollapsed" id="bs-example-navbar-collapse-1">
+          <nav class="menu menu--miranda">
+            <ul class="nav navbar-nav menu__list">
+              <li class="menu__item" [ngClass]="{'menu__item--current': selectedNavLink === '/' || selectedNavLink === '/main'}">
+                <a (click)='navigateTo("/")' class="menu__link">Home</a>
+              </li>
+              <li class="menu__item" [ngClass]="{'menu__item--current': selectedNavLink === '/about'}">
+                <a (click)='navigateTo("about")' class=" menu__link">About Us</a>
+              </li>
+              <li class="menu__item" [ngClass]="{'menu__item--current': selectedNavLink === 'blogs'}">
+                <a (click)='navigateTo("#blogs")' class=" menu__link">Destinations</a>
+              </li>
+              <li class="menu__item" [ngClass]="{'menu__item--current': selectedNavLink === 'gallery'}">
+                <a (click)='navigateTo("gallery")' class=" menu__link">Gallery</a>
+              </li>
+              <li class="menu__item" [ngClass]="{'menu__item--current': selectedNavLink === '/cotizador'}">
+                <a (click)='navigateTo("cotizador")' class=" menu__link">DMC</a>
+              </li>
+              <li class="menu__item" [ngClass]="{'menu__item--current': selectedNavLink === '/contact'}">
+                <a (click)='navigateTo("contact")' class=" menu__link">Contact</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <!-- </div> -->
+      </nav>
+    </div>
+    <div class="clearfix"></div>
+    <!-- //navigation -->
+  </div>
+</header>
+
+<a (click)='navigateTo("#banner-top")' class="scroll" id="toTop" style="display: block;">
+  <span id="toTopHover" style="opacity: 1;"> </span>
+</a>

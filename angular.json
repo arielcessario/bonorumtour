@@ -7,7 +7,7 @@
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "bon",
       "schematics": {},
       "architect": {
         "build": {
@@ -100,7 +100,7 @@
             "scripts": [
               "src/assets/js/easing.js",
               "src/assets/js/easy-responsive-tabs.js",
-              "src/assets/js/responsiveslides.min.js.js",
+              "src/assets/js/responsiveslides.min.js",
               "src/assets/js/move-top.js"
             ],
             "assets": ["src/favicon.ico", "src/assets"]
